@@ -1,116 +1,94 @@
 #include <iostream>
 using namespace std;
 
-//defining the class Addition to overload the method sumOf() to explain the concept of Polymorphism
+//defining the class Cuboid to demonstrate the concept of Plus Operator Overloading in CPP
+class Cuboid
 {
+    //Declaring class member variables as public to access from outside the class
+public:
+    double length;  // Length of Cuboid
+    double breadth; // Breadth of Cuboid
+    double height;  // Height of Cuboid
 
 public:
-    int sumOf(int n1, int n2)
+    double getVolume(void)
     {
-        cout << "\nPerforming the addition operation on two integers and the value returned is: ";
-        return n1 + n2;
+        return length * breadth * height;
     }
-    int sumOf(int n1, int n2, int n3)
+    void setLength(double l)
     {
-        cout << "\nPerforming the addition operation on three integers and the value returned is: ";
-        return n1 + n2 + n3;
+        length = l;
     }
-    int sumOf(int n1, int n2, int n3, int n4)
+
+    void setBreadth(double b)
     {
-        cout << "\nPerforming the addition operation on four integer values and the value returned is: ";
-        return n1 + n2 + n3 + n4;
+        breadth = b;
+    }
+
+    void setHeight(double h)
+    {
+        height = h;
+    }
+
+    // Overload + operator to add two Cuboid objects with each other.
+    Cuboid operator+(const Cuboid &c)
+    {
+        Cuboid cuboid;
+        cuboid.length = this->length + c.length;
+        cuboid.breadth = this->breadth + c.breadth;
+        cuboid.height = this->height + c.height;
+        return cuboid;
     }
 };
 
 //Defining the main method to access the members of the class
 int main()
 {
-    #include <iostream>
-using namespace std;
-
-class Box
-{
-   public:
-
-      double getVolume(void)
-      {
-         return length * breadth * height;
-      }
-      void setLength( double len )
-      {
-          length = len;
-      }
-
-      void setBreadth( double bre )
-      {
-          breadth = bre;
-      }
-
-      void setHeight( double hei )
-      {
-          height = hei;
-      }
-      // Overload + operator to add two Box objects.
-      Box operator+(const Box& b)
-      {
-         Box box;
-         box.length = this->length + b.length;
-         box.breadth = this->breadth + b.breadth;
-         box.height = this->height + b.height;
-         return box;
-      }
-   private:
-      double length;      // Length of a box
-      double breadth;     // Breadth of a box
-      double height;      // Height of a box
-};
-// Main function for the program
-int main( )
-{
-   Box Box1;                // Declare Box1 of type Box
-   Box Box2;                // Declare Box2 of type Box
-   Box Box3;                // Declare Box3 of type Box
-   double volume = 0.0;     // Store the volume of a box here
-
-   // box 1 specification
-   Box1.setLength(6.0);
-   Box1.setBreadth(7.0);
-   Box1.setHeight(5.0);
-
-   // box 2 specification
-   Box2.setLength(12.0);
-   Box2.setBreadth(13.0);
-   Box2.setHeight(10.0);
-
-   // volume of box 1
-   volume = Box1.getVolume();
-   cout << "Volume of Box1 : " << volume <<endl;
-
-   // volume of box 2
-   volume = Box2.getVolume();
-   cout << "Volume of Box2 : " << volume <<endl;
-
-   // Add two object as follows:
-   Box3 = Box1 + Box2;
-
-   // volume of box 3
-   volume = Box3.getVolume();
-   cout << "Volume of Box3 : " << volume <<endl;
-
-   return 0;
-}
-
 
     cout << "\n\nWelcome to Studytonight :-)\n\n\n";
-    cout << " =====  Program to explain the concept of Plus Operator Overloading , in CPP  ===== \n\n";
+    cout << " =====  Program to demonstrate the Plus Operator Overloading, in CPP  ===== \n\n";
 
-    Addition add; //Default constructor is called- which is not required to be written explicitly
+    //Declaring the Class objects to access the class members
+    Cuboid c1;
+    Cuboid c2;
+    Cuboid c3;
 
-    cout << add.sumOf(3, 5) << "\n\n";
-    cout << add.sumOf(3, 5, 10) << "\n\n";
-    cout << add.sumOf(3,5,7,10) << "\n\n";
+    //To store the volume of the Cuboid
+    double volume = 0.0;
 
-    cout << "\n\nExiting the main() method\n\n\n";
+    // Setting the length, breadth and height for the first Cuboid object: c1
+    c1.setLength(3.0);
+    c1.setBreadth(4.0);
+    c1.setHeight(5.0);
+
+    // Setting the length, breadth and height for the second Cuboid object: c2
+    c2.setLength(2.0);
+    c2.setBreadth(5.0);
+    c2.setHeight(8.0);
+
+    // Finding the Volume of the first Cuboid: c1
+    cout << "Calling the getVolume() method to find the volume of Cuboid c1\n";
+    volume = c1.getVolume();
+    cout << "Volume of the Cuboid c1 is : " << volume << "\n\n\n";
+
+    // Finding the Volume of the first Cuboid: c1
+    cout << "Calling the getVolume() method to find the volume of Cuboid c2\n";
+    volume = c2.getVolume();
+    cout << "Volume of the Cuboid c2 is : " << volume << "\n\n\n";
+
+    // Adding the two Cuboid objects c1 and c2 to form the third object c3:
+    c3 = c1 + c2;
+
+    // Printing the dimensions of the third Cuboid: c3
+    cout << "Length of the Cuboid c3 is : " << c3.length << endl;
+    cout << "Breadth of the Cuboid c3 is : " << c3.breadth << endl;
+    cout << "Height of the Cuboid c3 is : " << c3.height << endl;
+
+    // Finding the Volume of the third Cuboid: c3
+    cout << "\n\nCalling the getVolume() method to find the volume of Cuboid c3\n";
+    volume = c3.getVolume();
+    cout << "Volume of the Cuboid c3 is : " << volume << endl;
+    cout << "\n\n\n";
 
     return 0;
 }
