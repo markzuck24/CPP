@@ -10,7 +10,7 @@ int main()
     int i, j, rows;
 
     //to denote the range of numbers in each row
-    int n=0, first,last; 
+    int n = 0, first, last;
 
     cout << "Enter the number of rows in the pyramid: ";
     cin >> rows;
@@ -22,14 +22,13 @@ int main()
     {
 
         first = i;
-        last  = first + i -1;
-       
+        last = first + i - 1;
+
         //to display that the outer loop maintains the row number
         //cout << "Row # " << i << " contains the numbers from " << first << " to " << last << " :    ";
 
-        
         //inner loop is used to decide the number of columns in a particular row
-          for (j = 1; j <= i; ++j) // remember: in such cases, ++j works same as j++ (but not always- we will cover this in upcoming posts)
+        for (j = 1; j <= i; ++j) // remember: in such cases, ++j works same as j++ (but not always- we will cover this in upcoming posts)
             cout << n + j << " ";
 
         n++;

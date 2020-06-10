@@ -13,35 +13,32 @@ int main()
     cout << " Enter the three numbers :  \n\n\n";
     cin >> n1 >> n2 >> n3;
 
-    
-   //assign initial value for comparison (as the undefined variables store a random value)
+    //assign initial value for comparison (as the undefined variables store a random value)
     smallest = n1;
     largest = n2;
 
     //logic to find the Smallest and the Largest number - Remember, each variable stores only the latest value inserted into it.
     if (n2 < smallest)
-        {
-            smallest = n2;
-        }
+    {
+        smallest = n2;
+    }
 
     if (n3 < smallest)
-        {
-            smallest = n3;
-        }
+    {
+        smallest = n3;
+    }
     if (n3 > largest)
-        {
-            largest = n3;
-        }
+    {
+        largest = n3;
+    }
 
     if (n2 > largest)
-        {
-           largest = n2;
-        }
+    {
+        largest = n2;
+    }
 
-    
-
-    cout << "\n\n The Smallest number among ( " << n1 << ", " << n2 << ", " << n3 << " ) is : " << smallest ;
-    cout << "\n\n The Largest number among ( " << n1 << ", " << n2 << ", " << n3 << " ) is : " << largest ;
+    cout << "\n\n The Smallest number among ( " << n1 << ", " << n2 << ", " << n3 << " ) is : " << smallest;
+    cout << "\n\n The Largest number among ( " << n1 << ", " << n2 << ", " << n3 << " ) is : " << largest;
 
     cout << "\n\n\n";
 

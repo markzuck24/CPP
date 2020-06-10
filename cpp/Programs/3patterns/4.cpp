@@ -20,7 +20,7 @@ int main()
         cout << "Row # " << i << " contains " << (rows - i + 1) << " stars :  ";
 
         //inner loop is used to decide the number of * in a particular row
-        for (j = rows; j>=i; j--)
+        for (j = rows; j >= i; j--)
         {
             cout << "* ";
         }
