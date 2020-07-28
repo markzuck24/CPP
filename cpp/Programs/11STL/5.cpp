@@ -9,10 +9,10 @@ void show(priority_queue<int> q)
     //Copying the Priority Queue into another to maintain the original Priority Queue
     priority_queue<int> pq = q;
 
-    while(!pq.empty())
+    while (!pq.empty())
     {
-        cout << "\t" << pq.top();//printing the top most element
-        pq.pop();//deleting the top most element to move to the next
+        cout << " " << pq.top(); //printing the top most element
+        pq.pop();                 //deleting the top most element to move to the next
     }
 
     cout << endl;
@@ -33,22 +33,19 @@ int main()
     cout << "Inserting elements into the Priority Queue\n\n";
     for (i = 1; i < 6; i++)
     {
-        q.push(i*10);
+        q.push(i * 10);
     }
 
     cout << "The Priority Queue is: ";
     show(q);
 
-    
-    cout << "\n\nThe number of elements in the Priority Queue are : " << q.size();;
-    
+    cout << "\n\nThe number of elements in the Priority Queue are : " << q.size();
+    ;
 
+    cout << "\n\nThe first element or the element with the highest priority is: " << q.top();
+    ;
 
-    cout << "\n\nThe first element or the element with the highest priority is: " << q.top();;
-    
-    
-
-    cout << "\n\nAfter Deleting the top most element or the highest priority element from the Priority Queue, it becomes: ";
+    cout << "\n\nAfter Deleting the top most element from the Priority Queue, it becomes: ";
     q.pop();
     show(q);
 

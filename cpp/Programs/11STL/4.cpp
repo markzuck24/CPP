@@ -47,7 +47,6 @@ int main()
     cout << "The elements of the Second list are: ";
     show(l2);
 
-
     cout << "\n\nList 1 after getting reversed is: ";
     l1.reverse();
     show(l1);
