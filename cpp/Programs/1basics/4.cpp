@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main()
     cin >> c;
 
     //printing the ASCII value of the entered character
-    cout << "\nThe ASCII value of the entered character is : " << (int) c << "\n\n";
+    cout << "\nThe ASCII value of the entered character is : " << (int)c << "\n\n";
 
     return 0;
 }

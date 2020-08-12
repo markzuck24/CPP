@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -23,7 +23,7 @@ int main()
         cout << "\nEntered number is negative";
     }
 
-    cout << "\n\n\n"; 
+    cout << "\n\n\n";
 
     return 0;
 }

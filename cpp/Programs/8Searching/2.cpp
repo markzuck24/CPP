@@ -1,65 +1,78 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
+
+//Program to return the index of b in the vector a
+int BS(int a[], int l, int h, int b)
+{
+    int res = -1;
+    while (l <= h)
+    {
+        int m = (l + h) / 2;
+
+        if (a[m] == b)
+        {
+            return m;
+        }
+        else if (a[m] > b)
+        {
+            h = m - 1;
+        }
+        else
+        {
+            l = m + 1;
+        }
+    }
+
+    return -1;
+}
 
 int main()
 {
     cout << "\n\nWelcome to Studytonight :-)\n\n\n";
     cout << " =====  Program to demonstrate the Binary Search Algorithm, in CPP  ===== \n\n";
 
-    //variable declaration
-    int cost[10][10], i, j, k, n, e, top, v, stk[10], visit[10], visited[10];
+    int i, n;
+    int a[] = {2, 3, 5, 8, 9, 10};
 
-    cout << "Enter the number of vertices in the Graph: ";
-    cin >> n;
-    cout << "\nEnter the number of edges in the Graph : ";
-    cin >> e;
-    cout << "\nEnter the start and end vertex of the edges: \n";
+    n = sizeof(a) / sizeof(a[0]);
 
-    for (k = 1; k <= e; k++)
+    cout << "\n\nThe elements of the input sorted array are :\n\n";
+
+    for (i = 0; i < n; i++)
     {
-        cin >> i >> j;
-        cost[i][j] = 1;
+        cout << a[i] << "  ";
     }
 
-    cout << "\nEnter the initial vertex to start the DFS traversal with: ";
-    cin >> v;
-    cout << "\nThe DFS traversal on the given graph is : \n";
-    cout << v << " ";
+    int k1 = 8; //the element to find the index of
 
-    //As we start with the vertex v, marking it visited to avoid visiting again
-    visited[v] = 1;
+    //Calling BS() method to return the index of the element k1 if present, else -1.
+    int f1 = BS(a, 0, n - 1, k1);
 
-    k = 1;
-
-    //The DFS Traversal Logic
-    while (k < n)
+    if (f1 == -1)
     {
-        for (j = n; j >= 1; j--)
-        {
-            if (cost[v][j] != 0 && visited[j] != 1 && visit[j] != 1)
-            {
-                visit[j] = 1;
-
-                //put all the vertices that are connected to the visited vertex into a stack
-                stk[top] = j;
-                top++;
-            }
-        }
-
-        //output all the connected vertices one at a time
-        v = stk[--top];
-        cout << v << " ";
-        k++;
-
-        //as v is visited so it is not a valid candidate to visit in future so visit[v]=0 and visited[v]=1
-        visit[v] = 0;
-
-        //to mark it visited 
-        visited[v] = 1;
+        cout << "\n\nThe element " << k1 << " is not present in the given array. ";
+    }
+    else
+    {
+        cout << "\n\nThe index of the element " << k1 << " (starting from 0) is: " << f1;
     }
 
-        cout << "\n\n\n";
+    int k2 = 4; //the element to find the index of
+
+    //Calling BS() method to return the index of the element k2 if present, else -1.
+    int f2 = BS(a, 0, n - 1, k2);
+
+    if (f2 == -1)
+    {
+        cout << "\n\nThe element " << k2 << " is not present in the given array. ";
+    }
+    else
+    {
+        cout << "\n\nThe index of the element " << k2 << " (starting from 0) is: " << f2;
+    }
+
+    cout << "\n\n\n";
 
     return 0;
 }

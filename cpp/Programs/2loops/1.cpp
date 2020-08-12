@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -28,7 +28,6 @@ int main()
     } while (n < 20);
 
     cout << "The value at which the loop got terminated is : " << n << "\n\n\n";
-
 
     return 0;
 }
