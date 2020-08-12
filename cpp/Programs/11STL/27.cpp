@@ -26,7 +26,6 @@ int main()
 
     cout << " *** This random ordering depends on the hash function that is used internally. *** \n\n";
 
-
     //Unordered Set declaration (Unordered Set of integers)
     unordered_set<int> s;
 
@@ -39,7 +38,6 @@ int main()
     s.insert(82);
     s.insert(35);
     s.insert(54);
-
 
     cout << "\n\nThe elements of the Unordered Set are: ";
     show(s);

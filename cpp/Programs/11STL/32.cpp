@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 void showMultimap(unordered_multimap<int, string> mm)
 {
     unordered_multimap<int, string>::iterator i;
@@ -15,8 +13,6 @@ void showMultimap(unordered_multimap<int, string> mm)
         cout << " Pair #" << ++j << ":( " << i->first << ", " << i->second << " )\n";
     }
 }
-
-
 
 int main()
 {

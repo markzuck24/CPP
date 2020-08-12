@@ -11,11 +11,9 @@ int main()
 
     cout << "*** Each Element of a Map is a key value pair. *** \n\n";
 
-        cout << "*** When two elements having same key are inserted then only the latest copy is stored. *** \n\n";
+    cout << "*** When two elements having same key are inserted then only the latest copy is stored. *** \n\n";
 
-
-        cout << "***  An Unordered map internally uses a Hash Table to store the keys. *** \n\n";
-
+    cout << "***  An Unordered map internally uses a Hash Table to store the keys. *** \n\n";
 
     //Unordered Map declaration (Map with key as integer and value as string)
     unordered_map<int, string> m;
@@ -23,13 +21,12 @@ int main()
     //Filling the elements by using the m[key]=value format.
     cout << "\n\nFilling the Map with key-value pairs using the map[key]=value syntax."; //Unordered Map stores this in a random order
 
-    m[3]="Three";
-    m[4]="Four";
-    m[1]="One";
-    m[20]="Twenty";
-    m[31]="Thirty One";
-    m[3]="Four";
-
+    m[3] = "Three";
+    m[4] = "Four";
+    m[1] = "One";
+    m[20] = "Twenty";
+    m[31] = "Thirty One";
+    m[3] = "Four";
 
     cout << "\n\nThe number of elements in the Unordered Map are: " << m.size();
 
@@ -37,13 +34,12 @@ int main()
 
     unordered_map<int, string>::iterator i;
 
-    int j=0;
+    int j = 0;
 
     for (i = m.begin(); i != m.end(); i++)
     {
         cout << "\n   Key number " << ++j << " is: " << i->first << " and its values is: " << i->second;
     }
-
 
     cout << "\n\nNote that only the latest copy with key 3 is stored with value four.";
 

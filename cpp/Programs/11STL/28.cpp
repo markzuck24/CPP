@@ -5,11 +5,10 @@ using namespace std;
 
 bool cmp(int x, int y)
 {
-    if(x>y)
+    if (x > y)
         return true;
     else
         return false;
-    
 }
 
 //Function to print the elements of the unordered set using an iterator
@@ -37,7 +36,6 @@ int main()
 
     cout << " *** Unordered set can be sorted by copying its elements to a Vector. *** \n\n";
 
-
     //Unordered Set declaration (Unordered Set of integers)
     unordered_set<int> s;
 
@@ -54,9 +52,8 @@ int main()
     cout << "\n\nThe elements of the Unordered Set before sorting are: ";
     show(s);
 
-
     //Declaring a vector and initializing it with the elements of the unordered set
-    vector<int> v(s.begin(),s.end());
+    vector<int> v(s.begin(), s.end());
 
     //Sorting the vector elements in descending order using a custom comparator
     sort(v.begin(), v.end(), cmp);
@@ -70,7 +67,6 @@ int main()
     {
         cout << *it << "  "; //accessing the elements of the vector using * as i stores the address to each element
     }
-    
 
     cout << "\n\n\n";
 
