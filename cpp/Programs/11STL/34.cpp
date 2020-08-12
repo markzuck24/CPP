@@ -29,7 +29,6 @@ int main()
     cout << "\n\nWelcome to Studytonight :-)\n\n\n";
     cout << " ===== Program to find the Minimum element in a rotated Sorted Vector, in CPP  ===== \n\n\n";
 
-
     cout << " ===== Logic: The minimum element will have larger number on both right and left of it.   ===== \n\n\n";
 
     //initializing vector with the following elements

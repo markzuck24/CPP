@@ -1,11 +1,10 @@
 #include <iostream>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 vector<bool> v;
 vector<vector<int>> g;
-
 
 void bfsTraversal(int b)
 {
@@ -16,64 +15,71 @@ void bfsTraversal(int b)
     q.push(b);
 
     //mark b as visited
-    v[b]=true;
+    v[b] = true;
 
+    cout << "\n\nThe BFS Traversal is:  ";
 
-    while(!q.empty())
+    while (!q.empty())
     {
-        int a =q.front();
-        q.pop();//delete the first element form queue
+        int a = q.front();
+        q.pop(); //delete the first element form queue
 
-        for(auto j = g[a].begin(); j!=g[a].end(); j++)
+        for (auto j = g[a].begin(); j != g[a].end(); j++)
         {
-            if(!v[*j])
+            if (!v[*j])
             {
-                v[*j]=true;
+                v[*j] = true;
                 q.push(*j);
-
             }
         }
-        cout << a << " ";
-    }   
+        cout << a << "  ";
+    }
 }
 
 void makeEdge(int a, int b)
 {
-    g[a].push_back(b);//an edge from a to b (directed graph)
-
+    g[a].push_back(b); //an edge from a to b (directed graph)
 }
-
 
 int main()
 {
     cout << "\n\nWelcome to Studytonight :-)\n\n\n";
     cout << " =====  Program to demonstrate the Breadth First Search Algorithm, in CPP  ===== \n\n";
 
-    int n,e;
-    cin >> n >> e;
+    cout << " =====  Note; The vertices are numbered from 0 to n-1.  ===== \n\n";
 
-    v.assign(n,false);
-    g.assign(n,vector<int>());
+    int n, e;
 
-    int a,b,i;
+    cout << "Enter the number of vertices: ";
 
-    for(i=0;i<e;i++)
+    cin >> n;
+
+    cout << "\n\nEnter the number of edges: ";
+
+    cin >> e;
+
+    v.assign(n, false);
+    g.assign(n, vector<int>());
+
+    int a, b, i;
+
+    cout << "Enter the edges with source and target vetex: \n ";
+
+    for (i = 0; i < e; i++)
     {
         cin >> a >> b;
-        makeEdge(a,b);
-
+        makeEdge(a, b);
     }
 
-     for(i=0;i<n;i++)
+    for (i = 0; i < n; i++)
     {
         //if the node i is unvisited
-        if(!v[i])
+        if (!v[i])
         {
             bfsTraversal(i);
         }
     }
 
-    
     cout << "\n\n\n";
 
     return 0;
